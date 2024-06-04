@@ -1,0 +1,16 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /auto-mail
+    
+base-uri: localhost:8080
+    
+spring:
+  application:
+    name: auto-mail
+  devtools:
+    add-properties: false
+  docker:
+    compose:
+      enabled: false
