@@ -1,0 +1,30 @@
+
+
+.email-list {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.email-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.email-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.user-details {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.user-image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}

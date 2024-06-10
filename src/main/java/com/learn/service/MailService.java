@@ -456,7 +456,9 @@ public class MailService {
 		List<Message> messages = getMessages(request);
 		for (Message message : messages) {
 			String emailId = getSenderEmailIdFromMessage(message);
-			emailAddresses.add(emailId);
+			if(!StringUtils.isEmpty(emailId) && emailId != "unknown") {
+				emailAddresses.add(emailId.toLowerCase());
+			}
 		}
 		return emailAddresses;
 	}

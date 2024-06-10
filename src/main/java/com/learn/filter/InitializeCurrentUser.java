@@ -25,9 +25,7 @@ public class InitializeCurrentUser implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        
-        log.info("InitializeCurrentUser invoked.");
-        
+                
         chain.doFilter(request, response);
     }
 

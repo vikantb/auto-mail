@@ -1,23 +1,14 @@
 package com.learn.controller;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.charset.StandardCharsets;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.learn.service.UserService;
-
-import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/user")
@@ -30,22 +21,6 @@ public class UserController {
 
 	@Autowired
 	private RestTemplate restTemplate;
-	
-	@GetMapping("/")
-	public String home() throws IOException {
-		// Read the content of the HTML file
-        ClassPathResource resource = new ClassPathResource("static/index.html");
-        Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-        String htmlContent = FileCopyUtils.copyToString(reader);
-        // Return the HTML content
-        return htmlContent;
-	}
-
-	@GetMapping("/login-success")
-	public Object login(HttpSession session) {
-		log.info("login success.");
-		return getUserDetails();
-	}
 
 	@GetMapping("/details")
 	public Object getUserDetails() {
